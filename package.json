@@ -1,6 +1,6 @@
 {
   "name": "ashtr",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "license": "MIT",
   "scripts": {
     "ng": "ng",
@@ -15,6 +15,9 @@
     "name": "Ashish Gupta",
     "email": "gotoashishgupta@gmail.com"
   },
+  "workspaces": [
+    "packages/**/*"
+  ],
   "dependencies": {
     "@angular/animations": "^5.1.0",
     "@angular/common": "^5.1.0",
@@ -47,6 +50,7 @@
     "karma-coverage-istanbul-reporter": "^1.3.0",
     "karma-jasmine": "^1.1.1",
     "karma-jasmine-html-reporter": "^0.2.2",
+    "lerna": "^2.5.1",
     "protractor": "^5.2.1",
     "ts-node": "^4.0.1",
     "tslint": "^5.8.0",
