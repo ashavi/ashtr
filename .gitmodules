@@ -1,0 +1,3 @@
+[submodule "packages/@ashtr/demo-px-components"]
+	path = packages/@ashtr/demo-px-components
+	url = https://github.com/gotoashishgupta/universal-angular-px-components-submodule.git

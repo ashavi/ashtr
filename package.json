@@ -13,8 +13,7 @@
     "build:dynamic": "yarn build:client-and-server-bundles && yarn webpack:server",
     "build:client-and-server-bundles": "yarn build --prod --aot --output-hashing=false",
     "webpack:server": "./node_modules/.bin/webpack --config webpack.server.config.js --progress --colors",
-    "serve:dynamic": "node dist/server",
-    "postinstall": "bower install"
+    "serve:dynamic": "node dist/server"
   },
   "private": true,
   "author": {
@@ -22,8 +21,7 @@
     "email": "gotoashishgupta@gmail.com"
   },
   "workspaces": [
-    "packages/**/*",
-    "packages/@ashtr/demo-px-components"
+    "packages/**/*"
   ],
   "dependencies": {
     "@angular/animations": "^5.1.0",
