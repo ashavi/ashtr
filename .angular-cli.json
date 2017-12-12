@@ -27,7 +27,11 @@
         "dev": "environments/environment.ts",
         "prod": "environments/environment.prod.ts"
       },
-      "serviceWorker": true
+      "serviceWorker": true,
+      "appShell": {
+        "app": "shell",
+        "route": "shell"
+      }
     },
     {
       "root": "src",
@@ -54,7 +58,7 @@
       },
       "serviceWorker": true,
       "platform": "server",
-      "name": "ushell"
+      "name": "shell"
     }
   ],
   "e2e": {
