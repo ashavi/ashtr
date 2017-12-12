@@ -6,7 +6,7 @@
   "apps": [
     {
       "root": "src",
-      "outDir": "dist",
+      "outDir": "dist/browser",
       "assets": [
         "assets",
         "favicon.ico"
@@ -21,6 +21,12 @@
       "styles": [
         "styles.scss"
       ],
+      "stylePreprocessorOptions": {
+        "includePaths": [
+          "assets/scss",
+          "assets/bower_components"
+        ]
+      },
       "scripts": [],
       "environmentSource": "environments/environment.ts",
       "environments": {
@@ -35,7 +41,7 @@
     },
     {
       "root": "src",
-      "outDir": "dist-server/",
+      "outDir": "dist/server",
       "assets": [
         "assets",
         "favicon.ico"
@@ -50,6 +56,12 @@
       "styles": [
         "styles.scss"
       ],
+      "stylePreprocessorOptions": {
+        "includePaths": [
+          "assets/scss",
+          "assets/bower_components"
+        ]
+      },
       "scripts": [],
       "environmentSource": "environments/environment.ts",
       "environments": {
@@ -88,5 +100,6 @@
   "defaults": {
     "styleExt": "scss",
     "component": {}
-  }
+  },
+  "packageManager": "yarn"
 }
