@@ -1,28 +1,30 @@
 {
-  "name": "ashtr",
-  "version": "0.0.1",
+  "name": "${PROJECT_NAME}",
+  "version": "${PROJECT_VERSION}",
   "license": "MIT",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "ng serve  -H 0.0.0.0",
     "build": "ng build",
-    "test": "ng test",
+    "test": "ng test --browsers Chrome_no_sandbox",
     "lint": "ng lint",
     "e2e": "ng e2e",
     "start:dynamic": "yarn build:dynamic && yarn serve:dynamic",
-    "build:dynamic": "yarn build:client-and-server-bundles && yarn webpack:server",
-    "build:client-and-server-bundles": "yarn build --prod --aot --output-hashing=false",
-    "webpack:server": "./node_modules/.bin/webpack --config webpack.server.config.js --progress --colors",
-    "serve:dynamic": "node dist/server"
+    "build:dynamic":
+      "yarn build:client-and-server-bundles && yarn webpack:server",
+    "build:client-and-server-bundles":
+      "yarn build --prod --aot --output-hashing=false",
+    "webpack:server":
+      "./node_modules/.bin/webpack --config webpack.server.config.js --progress --colors",
+    "serve:dynamic": "node dist/server",
+    "docker": "docker"
   },
   "private": true,
   "author": {
     "name": "Ashish Gupta",
     "email": "gotoashishgupta@gmail.com"
   },
-  "workspaces": [
-    "packages/**/*"
-  ],
+  "workspaces": ["packages/**/*"],
   "dependencies": {
     "@angular/animations": "^5.1.0",
     "@angular/common": "^5.1.0",

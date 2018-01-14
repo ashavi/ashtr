@@ -1,0 +1,25 @@
+version: '3'
+
+services:
+
+  prod:
+    container_name: ${PROJECT_NAME}_prod
+    build:
+      context: .
+      args:
+        - CI_BUILD_ID=${CI_BUILD_ID}
+        - CI_BUILD_REF=${CI_BUILD_REF}
+        - CI_BUILD_REF_NAME=${CI_BUILD_REF_NAME}
+        - CI_BUILD_TIME=${CI_BUILD_TIME}
+        - CI_REGISTRY_IMAGE=${CI_REGISTRY_IMAGE}
+        - CI_PROJECT_NAME=${CI_PROJECT_NAME}
+    image: ${DOCKER_IMAGE_PROD:-${DOCKER_IMAGE_PROD}}
+    environment:
+      VIRTUAL_HOST: ${DOMAIN_PROD}
+      HTTPS_METHOD: noredirect # support both http and https
+    ports:
+      - "80"
+    restart: unless-stopped
+    # to get this work with https://github.com/jwilder/nginx-proxy
+    # related: https://github.com/jwilder/nginx-proxy/issues/305
+    network_mode: bridge
